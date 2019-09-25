@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-// 队列
+// 基础队列
 func main() {
 	queue := &Queue{
 		maxSize: 4,
