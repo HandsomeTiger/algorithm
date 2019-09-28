@@ -13,6 +13,10 @@ func main() {
 	fmt.Println("initial : ", arr)
 	InsertSort(arr)
 	fmt.Println("insert sort:", arr)
+	fmt.Println("________________________")
+	arr2 := []int{-9, 9, 3, -159, 65, 24}
+	quickSort(arr2)
+	fmt.Println(arr2)
 }
 
 // 选择排序法，依次找到最小值按顺序排序
@@ -59,5 +63,9 @@ func InsertSort(arr []int) {
 		}
 		fmt.Println(arr)
 	}
+}
+
+// 快速排序
+func quickSort(arr []int) {
 
 }

@@ -67,15 +67,11 @@ func InsertHeroNodeSort(head *HeroNode) {
 func DeleteHeroNode(head *HeroNode, no int) {
 	temp := head
 	for {
-
 		if temp.next.no == no {
-
 			temp.next = temp.next.next
 			break
 		} else {
-
 			temp = temp.next
-
 		}
 	}
 }
