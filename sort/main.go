@@ -8,9 +8,11 @@ func main() {
 	var arr = []int{7, 4, 6, 13, 5}
 	fmt.Println("initial : ", arr)
 	BubbleSort(arr)
+	InsertSort2(arr)
 	//return
 	SelectSort(arr)
 	InsertSort(arr)
+
 	//arr2 := []int{-9, 9, 3, -159, 65, 24}
 	//quickSort(arr2)
 	//fmt.Println(arr2)
@@ -69,6 +71,20 @@ func InsertSort(arr []int) {
 		}
 		fmt.Println(arr)
 	}
+}
+
+func InsertSort2(arr []int) {
+	if len(arr) < 2 {
+		return
+	}
+	for i := 1; i < len(arr); i++ {
+		for j := i - 1; j >= 0; j-- {
+			if arr[i] < arr[j] {
+				arr[j], arr[i] = arr[i], arr[j]
+			}
+		}
+	}
+	fmt.Println(arr)
 }
 
 // 快速排序
