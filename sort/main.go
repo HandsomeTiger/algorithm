@@ -7,33 +7,40 @@ import (
 func main() {
 	var arr = []int{7, 4, 6, 13, 5}
 	fmt.Println("initial : ", arr)
+	BubbleSort(arr)
+	//return
 	SelectSort(arr)
-	fmt.Println("select sort:", arr)
-	arr = []int{7, 4, 6, 13, 5}
-	fmt.Println("initial : ", arr)
 	InsertSort(arr)
-	fmt.Println("insert sort:", arr)
-	fmt.Println("________________________")
-	arr2 := []int{-9, 9, 3, -159, 65, 24}
-	quickSort(arr2)
-	fmt.Println(arr2)
+	//arr2 := []int{-9, 9, 3, -159, 65, 24}
+	//quickSort(arr2)
+	//fmt.Println(arr2)
+}
+
+// BubbleSort 冒泡排序法
+func BubbleSort(arr []int) {
+	for i := 0; i < len(arr)-1; i++ {
+		for j := 0; j < len(arr)-1-i; j++ {
+			if arr[j] > arr[j+1] {
+				arr[j], arr[j+1] = arr[j+1], arr[j]
+			}
+		}
+	}
+	fmt.Println(arr)
 }
 
 // 选择排序法，依次找到最小值按顺序排序
 func SelectSort(arr []int) {
 	length := len(arr)
-	fmt.Println(length)
 	for i := 0; i < length-1; i++ {
 		var maxKey int = i
-		fmt.Println("----", i)
 		for j := i + 1; j <= length-1; j++ {
 			if arr[maxKey] < arr[j] {
 				maxKey = j
 			}
 		}
 		arr[i], arr[maxKey] = arr[maxKey], arr[i]
-		fmt.Println(arr)
 	}
+	fmt.Println(arr)
 }
 
 func InsertSort(arr []int) {
@@ -54,7 +61,6 @@ func InsertSort(arr []int) {
 					arr[cur] = arr[cur-1]
 					cur--
 				} else {
-					fmt.Println("curr i !< ", arr[cur], arr[cur-1])
 					arr[cur] = insertVal
 					break
 				}
